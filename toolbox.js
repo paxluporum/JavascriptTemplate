@@ -18,22 +18,31 @@ export class Toolbox {
 
         let howManyTimesToPush = array.length;
 
-        // shuffled.push(array[0]);?????????????
         for(let i = 0; i < howManyTimesToPush; i++) {
             let randomIndex = this.getRandomIndex(array);
-            let removed = array.splice(randomIndex, 1) //start position, length
+            let removed = array.splice(randomIndex , 1 ) //start position, lenth.
+            
             shuffled.push(removed[0]);
         }
         return shuffled;
     }
 
-    getRandomColor(array) {
-        let randomColor = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];  
-        
-        
-        //this.getRandomColor
+    getRandomColor() {
+        let color = "#";
+        let chars = [
+            "0", "1", "2", "3",
+            "4", "5", "6", "7",
+            "8", "9", "a", "b",
+            "c", "d", "e", "f",
+        ];
+
+        for(let i = 0; i < 6; i++) {
+            //i'll be in here six times.
+            color += this.getRandomItem(chars);
+        }
+
+        //like #1afe24
+        return color;
     }
+
 }
-
-
-
